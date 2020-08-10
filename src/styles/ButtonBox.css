@@ -1,0 +1,39 @@
+.btb-wrapper {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    padding: 2%;
+    box-sizing: border-box;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.btb-red {
+    border: 1px solid #FF0000;
+}
+
+.btb-green {
+    border: 1px solid #39B54A;
+}
+
+.btb-red:hover {
+    background: #FF0000;
+    color: white;
+}
+
+.btb-green:hover {
+    background: #39B54A;
+    color: white;
+}
+
+.btb-padding {
+    padding: 0 10px;
+}

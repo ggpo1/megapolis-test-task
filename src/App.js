@@ -1,24 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import { Switch, Route } from 'react-router-dom';
+import TaskEditView from './views/TaskEditView';
+import TaskListView from './views/TaskListView';
+import Api from './api/Api';
 
 function App() {
+  const [data, setData] = useState([]);
+  
+  useEffect(() => {
+    (async () => {
+      let tasks = await Api.getTasks();
+      setData(tasks);
+    }) ();
+  }, []);
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className={'app-sub'}>
+        <Switch>
+          <Route path="/items/:taskId" component={TaskEditView} />
+          <Route path="/">
+            <TaskListView data={data} />
+          </Route>
+        </Switch>
+        <div className={'footer'}>© 2019 АО "Мегаполис"</div>
+      </div>
     </div>
   );
 }
