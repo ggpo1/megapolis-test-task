@@ -15,7 +15,7 @@ export default class GridView extends Component {
     }
 
     render() {
-        const { data } = this.state;
+        const { data, editAction, removeAction } = this.state;
         if (data.length === 0) return null;
 
         let headers = Object.keys(data[0]);
@@ -25,8 +25,16 @@ export default class GridView extends Component {
             let cells = [];
             headers.forEach(header => cells.push(<div key={`${el[header]}_${i}`} className={`gv-cell ${header === 'id' && 'gv-id'}`}>{el[header]}</div>));
             cells.push(<div key={`buttons_${i}`} className={'gv-cell gv-buttons-cell'}>
-                <ButtonBox title={'редактировать'} btStyle={'btb-edit btb-padding'} />
-                <ButtonBox title={'удалить'} btStyle={'btb-remove btb-padding'} />
+                <ButtonBox
+                    title={'редактировать'}
+                    btStyle={'btb-edit btb-padding'}
+                    action={() => editAction(el)}
+                />
+                <ButtonBox
+                    title={'удалить'}
+                    btStyle={'btb-remove btb-padding'}
+                    action={() => removeAction(el)}
+                />
             </div>);
             rows.push(<div key={`row_${i}`} className={'gv-row'}>{cells}</div>);
         });
