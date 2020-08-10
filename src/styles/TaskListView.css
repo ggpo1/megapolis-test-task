@@ -1,6 +1,7 @@
 .tlv-wrapper {
     flex-direction: column;
     width: 100%;
+    height: 100%;
     padding: 2% 1.5%;
     background: transparent;
 }
@@ -12,3 +13,48 @@
     /* background: blue; */
 }
 
+.tlv-add-modal {
+    width: 25vw;
+    height: 15vh;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tvl-am-title {
+    justify-content: space-between;
+}
+
+.tvl-am-title>div.title {
+    width: 100%;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: bold;
+}
+
+.tvl-am-control {
+    width: 100%;
+    flex-direction: column;
+}
+
+.tvl-am-control>div.error {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    color: #FF0000;
+}
+
+.tlv-add-modal>div:last-child {
+    width: 100%;
+    height: 20%;
+    justify-content: flex-end;
+}
+
+.tlv-add-modal>div:last-child>div {
+    width: 30%;
+    height: 100%;
+}

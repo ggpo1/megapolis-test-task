@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './App.css';
 import { Switch, Route, useHistory } from 'react-router-dom';
 import TaskEditView from './views/TaskEditView';
@@ -7,10 +7,6 @@ import TaskListView from './views/TaskListView';
 function App() {
   // const [data, setData] = useState([]);
   let history = useHistory();
-
-  useEffect(() => {
-    
-  }, []);
   
   return (
     <div className="App">

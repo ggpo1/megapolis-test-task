@@ -12,10 +12,15 @@ class Api {
     }
 
     static addTask(title) {
+        let _title = { title };
+        console.log(JSON.stringify(_title));
         return new Promise((resolve => {
             fetch(`https://test.megapolis-it.ru/api/list`, {
                 method: 'POST',
-                body: JSON.stringify({ title }),
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(_title),
             }).then((response) => response.json()).then((body) => {
                 resolve(body.id);
             }).catch(() => {

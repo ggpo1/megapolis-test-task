@@ -24,6 +24,14 @@
     border: 1px solid #39B54A;
 }
 
+.btb-blue {
+    border: 1px solid #0071BC;
+}
+
+.btb-blue:hover {
+    background: #0071BC;
+}
+
 .btb-red:hover {
     background: #FF0000;
     color: white;
