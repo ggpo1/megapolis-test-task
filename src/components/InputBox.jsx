@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import '../styles/InputBox.css';
 
-function InputBox({ change }) {
+function InputBox({ value, change }) {
+    const [prevValue, setPrevValue] = useState(null);
+
+    if (value !== prevValue) {
+        // Row изменился с прошлого рендера. Обновляем
+        setPrevValue(value);
+    }
+
     return (
-        <input onChange={(e) => change(e.target.value)} className={'input-box'} type="text" />
+        <input value={value} onChange={(e) => change(e.target.value)} className={'input-box'} type="text" />
     );
 }
 
